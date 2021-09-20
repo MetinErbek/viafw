@@ -1,23 +1,29 @@
 <?php
+session_start();
 /* 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 */
-$projectFolder = 'smallapp';
-require_once('system/Core.php');
-
-
+require_once ('system/db/MysqliDb.php');
+$projectFolder = 'ulker/admin/';
 
 try
 {
 	
-	//$db = new MysqliDb('metinerbek.com', 'metinerb_araplar', 'araplar.metin2', 'metinerb_araplar');
-	
+	$db = new MysqliDb('localhost', 'root', '', 'db');
+
 } catch(Exception $e)
 {
 	echo 'DB ERROR';
 }
+
+
+require_once('system/Core.php');
+
+
+
+
 
 
 
